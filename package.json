@@ -1,0 +1,20 @@
+{
+  "name": "build",
+  "description": "Builds necessary assets and turns them into a package for deployment.",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ezzygemini/build.git"
+  },
+  "scripts": {
+    "build": "node ./index.js",
+    "test": "node node_modules/testing"
+  },
+  "license": "MIT",
+  "version": "0.1.0",
+  "dependencies": {
+    "grunt": "^1.0.1"
+  },
+  "devDependencies": {
+    "testing": "ezzygemini/testing"
+  }
+}
