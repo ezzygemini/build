@@ -15,8 +15,11 @@
     "argument": "github:ezzygemini/argument",
     "grunt": "^1.0.1",
     "grunt-cli": "^1.2.0",
+    "grunt-contrib-compass": "^1.1.1",
     "grunt-contrib-copy": "^1.0.0",
+    "grunt-contrib-cssmin": "^2.0.0",
     "grunt-jscs": "^3.0.1",
+    "grunt-version": "^1.1.1",
     "logger": "github:ezzygemini/logger"
   },
   "devDependencies": {

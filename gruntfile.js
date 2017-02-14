@@ -6,7 +6,10 @@ module.exports = grunt => {
 
   grunt.registerTask('default', () => {
     grunt.task.run([
-      'copyFiles'
+      // 'copyFiles',
+      // 'checkCodeStyle',
+      'compassCompile',
+      // 'updateVersion'
     ]);
   });
 

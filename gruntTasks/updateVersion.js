@@ -1,3 +1,4 @@
+const argument = require('argument');
 module.exports = grunt => {
 
   grunt.registerTask('updateVersion', () => {
@@ -5,24 +6,16 @@ module.exports = grunt => {
     // Load dependency.
     grunt.loadNpmTasks('grunt-version');
 
-    grunt.config('version.project', {
-      src: ['package.json']
+    const pkg = argument('PACKAGE_SOURCE', '../src/package.json');
+
+    grunt.config('version', {
+      options: {pkg},
+      project: {
+        src: [pkg]
+      }
     });
 
-    grunt.registerTask('build-version-read', function() {
-      pkg = grunt.file.readJSON('package.json');
-      version = pkg.version;
-    });
-
-    grunt.registerTask('build-version-push', function() {
-      grunt.task.run([
-        'git-add',
-        'git-commit:[Release ' + version + '] Version modified',
-        'git-tag:' + version,
-        'git-push',
-        'git-push-tags'
-      ]);
-    });
+    grunt.task.run('version:project:' + argument('BUILD_TYPE', 'patch'));
 
   });
 

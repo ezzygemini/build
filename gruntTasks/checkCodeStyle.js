@@ -7,14 +7,13 @@ module.exports = grunt => {
 
     grunt.config('jscs', {
       src: [
-        'src/**/*.js',
-        '!src/**/*.min.js'
-        // ,
-        // '!src/assets/dist/**/*.js',
-        // '!src/assets/libs/**/*.js'
+        'target/*/*.js',
+        '!target/*/*.min.js',
+        'target/**/*.js',
+        '!target/**/*.min.js'
       ],
       options: {
-        config: true
+        config: '.jscsrc'
       }
     });
 
