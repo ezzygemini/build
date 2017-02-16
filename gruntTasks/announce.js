@@ -1,3 +1,4 @@
+const argument = require('argument');
 module.exports = grunt => {
 
   grunt.registerTask('announce', () => {
