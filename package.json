@@ -13,6 +13,9 @@
   "version": "0.1.0",
   "dependencies": {
     "argument": "ezzygemini/argument",
+    "logger": "ezzygemini/logger"
+  },
+  "devDependencies": {
     "aws-sdk": "^2.14.0",
     "grunt": "^1.0.1",
     "grunt-cli": "^1.2.0",
@@ -23,9 +26,6 @@
     "grunt-git": "^1.0.3",
     "grunt-jscs": "^3.0.1",
     "grunt-version": "^1.1.1",
-    "logger": "ezzygemini/logger"
-  },
-  "devDependencies": {
     "testing": "ezzygemini/testing"
   }
 }
