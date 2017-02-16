@@ -13,9 +13,11 @@
   "version": "0.1.0",
   "dependencies": {
     "argument": "github:ezzygemini/argument",
+    "aws-sdk": "^2.14.0",
     "grunt": "^1.0.1",
     "grunt-cli": "^1.2.0",
     "grunt-contrib-compass": "^1.1.1",
+    "grunt-contrib-compress": "^1.4.1",
     "grunt-contrib-copy": "^1.0.0",
     "grunt-contrib-cssmin": "^2.0.0",
     "grunt-jscs": "^3.0.1",

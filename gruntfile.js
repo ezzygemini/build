@@ -8,8 +8,9 @@ module.exports = grunt => {
     grunt.task.run([
       // 'copyFiles',
       // 'checkCodeStyle',
-      'compassCompile',
-      // 'updateVersion'
+      // 'compassCompile',
+      // 'updateVersion',
+      'package'
     ]);
   });
 

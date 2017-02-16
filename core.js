@@ -12,6 +12,7 @@ module.exports = type => {
       .replace(/\\/g, '/') + '/';
   const projectSrc = path.relative(__dirname, process.cwd())
       .replace(/\\/g, '/') + '/';
+
   const cmd = 'node ./node_modules/grunt-cli/bin/grunt ' +
     `--BUILD_TYPE=${type} ` +
     `--PACKAGE_SOURCE="${projectSrc}package.json" ` +

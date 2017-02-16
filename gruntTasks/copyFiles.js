@@ -1,4 +1,5 @@
 const argument = require('argument');
+const buildSrc = argument('BUILD_SOURCE', '../../');
 
 module.exports = grunt => {
 
@@ -7,14 +8,30 @@ module.exports = grunt => {
     // Load dependencies.
     grunt.loadNpmTasks('grunt-contrib-copy');
 
-    grunt.file.delete('./target');
+    if (grunt.file.exists('./target')) {
+      grunt.file.delete('./target');
+    }
+
+    let copyFiles = ['*', '**'];
+    if (grunt.file.exists(buildSrc + '/.buildignore')) {
+      const ignoredFiles = grunt.file.read(buildSrc + '/.buildignore')
+        .toString().split(/[\n\s]+/)
+        .filter(row => row && !/^#.*$/.test(row))
+        .map(row => '!' + row);
+      grunt.log.writeln('Ignored files to copy:');
+      grunt.log.writeln(ignoredFiles);
+      copyFiles = copyFiles.concat(ignoredFiles);
+    }
+
+    grunt.log.writeln('Files to copy:');
+    grunt.log.writeln(copyFiles);
 
     grunt.config('copy.project', {
       files: [
         {
           expand: true,
-          cwd: argument('BUILD_SOURCE', '../src/'),
-          src: ['*', '**'],
+          cwd: buildSrc,
+          src: copyFiles,
           dest: './target/',
           filter: 'isFile'
         }
