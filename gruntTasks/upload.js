@@ -3,31 +3,31 @@ const AWS = require('aws-sdk');
 
 module.exports = grunt => {
 
-  const packageFile = argument('PACKAGE_SOURCE', '../../package.json');
-  const packageConfig = grunt.file.readJSON(packageFile);
-  const {version} = packageConfig;
-  const awsConfig = packageConfig.aws || {};
-  const region = argument(['region', 'REGION'], awsConfig.region);
-  const accessKeyId = argument(['accessKeyId', 'ACCESS_KEY_ID'],
-    awsConfig.accessKeyId);
-  const secretAccessKey = argument(['secretAccessKey', 'SECRET_ACCESS_KEY'],
-    awsConfig.secretAccessKey);
-  const elasticBeanstalkApp = argument('ELASTIC_BEANSTALK_APPLICATION',
-    (awsConfig.elasticBeanstalk || {}).application);
-  const bucket = argument('ELASTIC_BEANSTALK_BUCKET',
-    (awsConfig.elasticBeanstalk || {}).bucket);
-  const prefix = argument('ELASTIC_BEANSTALK_PREFIX',
-    (awsConfig.elasticBeanstalk || {}).prefix || 'release');
-  const s3 = new AWS.S3({
-    accessKeyId, secretAccessKey, region,
-    apiVersion: '2006-03-01'
-  });
-  const eb = new AWS.ElasticBeanstalk({
-    accessKeyId, secretAccessKey, region,
-    apiVersion: '2010-12-01'
-  });
-
   grunt.registerTask('upload', function() {
+
+    const packageFile = argument('PACKAGE_SOURCE', '../../package.json');
+    const packageConfig = grunt.file.readJSON(packageFile);
+    const {version} = packageConfig;
+    const awsConfig = packageConfig.aws || {};
+    const region = argument(['region', 'REGION'], awsConfig.region);
+    const accessKeyId = argument(['accessKeyId', 'ACCESS_KEY_ID'],
+      awsConfig.accessKeyId);
+    const secretAccessKey = argument(['secretAccessKey', 'SECRET_ACCESS_KEY'],
+      awsConfig.secretAccessKey);
+    const elasticBeanstalkApp = argument('ELASTIC_BEANSTALK_APPLICATION',
+      (awsConfig.elasticBeanstalk || {}).application);
+    const bucket = argument('ELASTIC_BEANSTALK_BUCKET',
+      (awsConfig.elasticBeanstalk || {}).bucket);
+    const prefix = argument('ELASTIC_BEANSTALK_PREFIX',
+      (awsConfig.elasticBeanstalk || {}).prefix || 'release');
+    const s3 = new AWS.S3({
+      accessKeyId, secretAccessKey, region,
+      apiVersion: '2006-03-01'
+    });
+    const eb = new AWS.ElasticBeanstalk({
+      accessKeyId, secretAccessKey, region,
+      apiVersion: '2010-12-01'
+    });
 
     if (!accessKeyId || !secretAccessKey) {
       return;
