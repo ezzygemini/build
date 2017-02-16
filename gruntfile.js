@@ -13,7 +13,8 @@ module.exports = grunt => {
       'updateVersion',
       'package',
       'upload',
-      'tag'
+      'tag',
+      'announce'
     ]);
   });
 
