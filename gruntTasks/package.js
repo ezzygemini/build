@@ -28,7 +28,12 @@ module.exports = grunt => {
       }]
     });
 
-    grunt.task.run('compress');
+    grunt.registerTask('copyPackage', () => {
+      grunt.file.copy('package.zip',
+        argument('PROJECT_SOURCE', '../../') + 'package.zip');
+    });
+
+    grunt.task.run(['compress', 'copyPackage']);
 
   });
 
