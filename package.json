@@ -20,11 +20,13 @@
     "grunt-contrib-compress": "^1.4.1",
     "grunt-contrib-copy": "^1.0.0",
     "grunt-contrib-cssmin": "^2.0.0",
+    "grunt-git": "^1.0.3",
     "grunt-jscs": "^3.0.1",
     "grunt-version": "^1.1.1",
     "logger": "github:ezzygemini/logger"
   },
   "devDependencies": {
+    "grunt-force-task": "^2.0.0",
     "testing": "ezzygemini/testing"
   }
 }
