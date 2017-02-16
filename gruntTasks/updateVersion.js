@@ -15,7 +15,7 @@ module.exports = grunt => {
       }
     });
 
-    grunt.task.run('version:project:' + argument('BUILD_TYPE', 'patch'));
+    grunt.task.run('version::' + argument('BUILD_TYPE', 'patch'));
 
   });
 

@@ -7,10 +7,10 @@ module.exports = grunt => {
   grunt.registerTask('default', () => {
 
     grunt.task.run([
+      'updateVersion',
       'copyFiles',
       'checkCodeStyle',
       'compassCompile',
-      'updateVersion',
       'package',
       'upload',
       'tag',
