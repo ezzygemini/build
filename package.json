@@ -20,7 +20,7 @@
     "grunt-contrib-compress": "^1.4.1",
     "grunt-contrib-copy": "^1.0.0",
     "grunt-contrib-cssmin": "^2.0.0",
-    "grunt-git": "^1.0.3",
+    "grunt-git": "^1.0.13",
     "grunt-jscs": "^3.0.1",
     "grunt-npm-install": "^0.3.1",
     "grunt-version": "^1.1.1",
