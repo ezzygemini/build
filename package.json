@@ -13,7 +13,7 @@
   "version": "0.1.0",
   "dependencies": {
     "argument": "ezzygemini/argument",
-    "aws-sdk": "^2.14.0",
+    "aws-sdk": "^2.473.0",
     "grunt": "^1.0.1",
     "grunt-cli": "^1.2.0",
     "grunt-contrib-compass": "^1.1.1",
